@@ -30,7 +30,7 @@ if (isset($_SESSION['email'])) {
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form name = "form" id = "form" class="form">
                         <div class="form-group">
                             <label for="email">Email address</label>
                             <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
@@ -65,6 +65,20 @@ if (isset($_SESSION['email'])) {
         });
 
         $('#login_btn').click(function() {
+            var form = document.querySelector('form');
+            if (!form.checkValidity()) {
+                swal({
+                    title: "Error",
+                    text: "Please match requested formats",
+                    icon: "error",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((value) => {
+                    window.location.href = "loginModal.php";
+                });
+            }
+            
             var email = $('#email').val();
             var pin = $('#pin').val();
 
