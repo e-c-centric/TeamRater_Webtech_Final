@@ -1,5 +1,4 @@
 <?php
-// Set headers to return JSON data
 header('Content-Type: application/json');
 
 require_once '../settings/connection.php';

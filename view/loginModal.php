@@ -37,7 +37,7 @@ if (isset($_SESSION['email'])) {
                         </div>
                         <div class="form-group">
                             <label for="pin">PIN</label>
-                            <input type="password" class="form-control" id="pin" placeholder="PIN">
+                            <input type="password" class="form-control" id="pin" placeholder="PIN" pattern="[0-9]{4}" title="PIN must be 4 digits">
                         </div>
                     </form>
                 </div>
